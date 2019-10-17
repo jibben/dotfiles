@@ -41,6 +41,7 @@ if dein#load_state(pluginDir)
     call dein#add('deoplete-plugins/deoplete-go', {'build': 'make', 'on_ft': 'go'})
     call dein#add('landaire/deoplete-swift', {'on_ft': 'swift'})
     call dein#add('keith/swift.vim', {'on_ft': 'swift'})
+    call dein#add('zchee/deoplete-jedi', {'on_ft': 'python'})
     call dein#add('Shougo/echodoc.vim')
 
     " ale for linting
@@ -53,6 +54,9 @@ if dein#load_state(pluginDir)
     " Better go development
     call dein#add('fatih/vim-go', {'on_ft': 'go'})
 
+    " Python development
+    call dein#add('psf/black', {'on_ft': 'py'})
+    call dein#add('davidhalter/jedi-vim', {'on_ft': 'py'})
 
     " I want to close buffers
     call dein#add('mhinz/vim-sayonara')
@@ -332,6 +336,37 @@ augroup go
   au FileType go nmap <Leader>gi :GoInfo
   au FileType go nmap <Leader>gl :GoDecls<cr>
   au FileType go nmap <Leader>g; :GoDeclsDir<cr>
+
+augroup END
+
+"*****************************************************************************
+"" Python development
+"*****************************************************************************
+
+" Black configuration for formatting.
+let g:black_linelength = 120
+let g:black_skip_string_normalization = 1
+
+" jedi-vim for python navigation.
+
+" Use deoplete for autocompletion, so we don't need jedi completion.
+let g:jedi#completions_enabled = 0
+" Don't screw with my other configs.
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#auto_initialization = 0
+
+autocmd BufNewFile,BufRead *.py setlocal ft=python
+
+augroup python
+
+    au!
+    au Filetype python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
+    au Filetype python set pastetoggle=<leader>pp
+    au Filetype python nnoremap <silent> <buffer> gd :call jedi#goto()<cr>
+    au Filetype python nnoremap <silent> <buffer> <leader>pa :call jedi#goto_assignments()<cr>
+    au Filetype python nnoremap <silent> <buffer> <leader>pd :call jedi#show_documentation()<cr>
+    au Filetype python nnoremap <silent> <buffer> <leader>pu :call jedi#usages()<cr>
+    au Filetype python nnoremap <silent> <buffer> <leader>pr :call jedi#rename()<cr>
 
 augroup END
 
