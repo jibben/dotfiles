@@ -267,7 +267,10 @@ let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
 
 " Ale
-let g:ale_linters = {'python': ['flake8']}
+let g:ale_linters = {
+            \ 'python': ['flake8'],
+            \ 'go': ['gopls', 'golint', 'govet'],
+            \}
 
 " Fuzzy search
 nmap <Leader>b :Buffers<CR>
