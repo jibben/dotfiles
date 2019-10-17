@@ -55,8 +55,8 @@ if dein#load_state(pluginDir)
     call dein#add('fatih/vim-go', {'on_ft': 'go'})
 
     " Python development
-    call dein#add('psf/black', {'on_ft': 'py'})
-    call dein#add('davidhalter/jedi-vim', {'on_ft': 'py'})
+    call dein#add('psf/black', {'on_ft': 'python'})
+    call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 
     " I want to close buffers
     call dein#add('mhinz/vim-sayonara')
@@ -265,6 +265,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline_skip_empty_sections = 1
+
+" Ale
+let g:ale_linters = {'python': ['flake8']}
 
 " Fuzzy search
 nmap <Leader>b :Buffers<CR>
