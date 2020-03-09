@@ -373,6 +373,20 @@ augroup python
     au Filetype python nnoremap <silent> <buffer> <leader>pd :call jedi#show_documentation()<cr>
     au Filetype python nnoremap <silent> <buffer> <leader>pu :call jedi#usages()<cr>
     au Filetype python nnoremap <silent> <buffer> <leader>pr :call jedi#rename()<cr>
+    au Filetype python nnoremap <silent> <buffer> <leader>pb :Black
+
+augroup END
+
+"*****************************************************************************
+"" Web development
+"*****************************************************************************
+
+autocmd BufNewFile,BufRead *.html ft=html
+
+augroup html
+
+    au!
+    au Filetype html setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2 textwidth=240
 
 augroup END
 
