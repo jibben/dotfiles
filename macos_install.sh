@@ -14,3 +14,4 @@ mkdir -r dev/golang/
 python3 -m pip install --user --upgrade pynvim
 brew install reattach-to-user-namespace
 
+# go get -u github.com/stamblerre/gocode

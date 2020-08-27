@@ -1,10 +1,6 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR 5:\x1d
-SETUVAR --export CUE_BACKEND_SRC:/Users/jibben/gohome/src/github\x2ecom/cuecal/cue\x2dbackend
-SETUVAR --export CUE_CLIENT_SRC:/Users/jibben/dev/cue\x2dclient/
-SETUVAR --export CUE_ENV:local
-SETUVAR --export CUE_EVENTPREDICTION_SRC:/Users/jibben/dev/cue\x2deventprediction/
 SETUVAR --export FZF_DEFAULT_COMMAND:ag\x20\x2d\x2dhidden\x20\x2d\x2dignore\x20\x2egit\x20\x2dg\x20\x22\x22
 SETUVAR --export --path GOPATH:/Users/jibben/gohome
 SETUVAR --export GOROOT:/usr/local/opt/go/libexec

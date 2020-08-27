@@ -1,0 +1,15 @@
+brew golang
+brew nvim
+brew tmux
+brew reattach-to-user-namespace
+brew thefuck
+brew the_silver_searcher
+brew htop
+brew git
+
+tap "homebrew/cask"
+cask iterm2
+cask firefox
+cask spotify
+cask steam
+cask zoom

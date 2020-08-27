@@ -55,7 +55,7 @@ if dein#load_state(pluginDir)
     call dein#add('fatih/vim-go', {'on_ft': 'go'})
 
     " Python development
-    call dein#add('psf/black', {'on_ft': 'python'})
+    call dein#add('psf/black', {'on_ft': 'python', 'rev': '19.10b0'})
     call dein#add('davidhalter/jedi-vim', {'on_ft': 'python'})
 
     " I want to close buffers
