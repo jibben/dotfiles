@@ -242,8 +242,10 @@ nmap <C-p> :bprev<CR>
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 5
-let g:deoplete#max_list = 10
+call deoplete#custom#option({
+\ 'max_list': 10,
+\ 'auto_complete_delay': 5,
+\ })
 " tab for deoplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -286,6 +288,9 @@ map <leader>/ <plug>NERDCommenterToggle
 
 " Easy kill buffers
 nmap <leader>ss :Sayonara!<CR>
+
+" Easy close quickfix
+nmap <leader>; :cclose<CR>
 
 "*****************************************************************************
 "" Templates development
@@ -373,7 +378,7 @@ augroup python
     au Filetype python nnoremap <silent> <buffer> <leader>pd :call jedi#show_documentation()<cr>
     au Filetype python nnoremap <silent> <buffer> <leader>pu :call jedi#usages()<cr>
     au Filetype python nnoremap <silent> <buffer> <leader>pr :call jedi#rename()<cr>
-    au Filetype python nnoremap <silent> <buffer> <leader>pb :Black
+    au Filetype python nnoremap <silent> <buffer> <leader>pb :Black<CR>
 
 augroup END
 
